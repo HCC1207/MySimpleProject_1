@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img{
+    vertical-align: bottom;
+}
+.footer{
+    background-color: #333;
+    color: #aaa;
+    text-align: center;
+    padding: 10px 0;
+}
+.banner img{
+    width: 100%;
+}
+
+.path{
+    display: flex;
+}
+.path li{
+    position: relative; /* 讓下面的絕對定位找到他 */
+    padding: 6px 8px;
+}
+.path li a{
+    color: #aaa;
+    text-decoration: none;
+    font-size: 15px;
+}
+.path li + li::before{
+    content: '/';
+    color: #aaa;
+    position: absolute; /* 將/固定在字的左邊 */
+    left: 0;
+}
+.path.x{
+    visibility: hidden;
+}
+
+.item-group{
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.title{
+    margin: 0 0 20px;
+    padding: 30px 10px;
+    background-color: #ccc;
+}
+.title h2{
+    text-align: center;
+    font-size: 46px;
+}
+.title p{
+    font-size: 22px;
+    text-align: center;
+}
+
+.item{
+    margin: 0 10px 40px;
+}
+.item .text h3{
+    font-size: 24px;
+    text-align: center;
+}
+.item .pic img{
+    width: 100%;
+}
+
+.service{
+    padding: 40px 0;
+    background-color: #ffa;
+}
+.service .text h2{
+    font-size: 46px;
+    text-align: center;
+}
+
+.toTop-arrow {
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 33%;
+	opacity: 0.6;
+	background: #000;
+	cursor: pointer;
+	position:fixed;
+	right: 1rem;
+	bottom: 1rem;
+	/* display: none; */
+}
+.toTop-arrow::before, .toTop-arrow::after {
+	width: 18px;
+	height: 5px;
+	border-radius: 3px;
+	background: #f90;
+	position: absolute;
+	content: '';
+}
+.toTop-arrow::before {
+	transform: rotate(-45deg) translate(0, -50%);
+	left: 0.5rem;
+}
+.toTop-arrow::after {
+	transform: rotate(45deg) translate(0, -50%);
+	right: 0.5rem;
+}
+.toTop-arrow:focus {outline: none;}
+
+/* 以上為手機或是通用內容 以下為平板、電腦等 */
+
+@media screen and (min-width: 768px) {
+    .item-group{
+        display: flex;
+    }
+    .service .item{
+        display: flex;
+        margin: auto;
+    }
+    .service .item .pic,
+    .service .item .text{
+        width: 50%;
+        margin: 0 10px;
+    }
+    .service .item .text{
+        display: flex;
+        padding: 0 10px;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
